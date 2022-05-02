@@ -19,6 +19,10 @@ export default function CharacterContainer() {
         setFilteredCharacters(filtered)
     }
 
+    function resetFilter() {
+        setFilteredCharacters(characters.data)
+    }
+
     useEffect(() => {
         console.log('fetching characters')
         characters.execute();
@@ -34,7 +38,7 @@ export default function CharacterContainer() {
         <p>Loading characters...</p>
     ) : (
         <>
-            <Filters families={families} filterByFamily={filterByFamily}/>
+            <Filters families={families} filterByFamily={filterByFamily} resetFilter={resetFilter}/>
             <div className="characters">
                 {filteredCharacters?.map((character: CharacterType) =>
                     <Character character={character} key={character.id}/>)}

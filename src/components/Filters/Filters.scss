@@ -1,10 +1,37 @@
-.filters {
-  list-style-type: none;
-  padding-inline-start: 0;
-  display: flex;
-  flex-flow: row wrap;
+.filter-container {
+  position: relative;
+  margin: 1rem 0;
 
-  .filter-item {
+  .filter-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    font-size: 0.75rem;
 
+    .active-filter {
+
+    }
+  }
+
+  .filters {
+    position: absolute;
+    right: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: flex;
+    flex-flow: column wrap;
+
+    .filter-item {
+      width: 100%;
+
+      .active {
+
+      }
+
+      button {
+        width: 100%;
+      }
+    }
   }
 }
+
