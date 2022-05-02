@@ -1,14 +1,49 @@
 .character {
+  background-color: #222;
+  border: 1px solid #444;
+  margin-bottom: .5rem;
+
   button {
     width: 100%;
+    padding: 0 1rem;
+    background-color: #333;
+    color: #ddd;
     text-align: start;
+    border: none;
   }
 
   .character-details {
     padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: space-between;
   }
 
   .character-image {
-    max-width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  dl {
+    flex: 1;
+    margin-block: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content;
+    grid-gap: 1rem;
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-inline-start: 0;
+    }
   }
 }

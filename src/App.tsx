@@ -1,29 +1,9 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import logo from './got-logo.png';
+import CharacterContainer from "./components/CharacterContainer/CharacterContainer";
 import './App.scss';
-import useGetRequest from "./useGetRequest";
-import Character, {CharacterType} from "./components/Character/Character";
-import CharacterDataProvider, {CharacterContext} from "./CharacterDataProvider";
-
-const Characters = () => {
-    const characters = useContext(CharacterContext)
-    return (
-        <div className="houses">
-            {characters.isLoading
-                ? <p>Loading characters...</p>
-                : characters.data.map((character: CharacterType) =>
-                    <Character character={character} key={character.id}/>)}
-        </div>
-    )
-}
 
 function App() {
-    const characters = useGetRequest(`https://thronesapi.com/api/v2/Characters`);
-
-    useEffect(() => {
-        characters.execute();
-    }, [])
-
     return (
         <div className="App">
             <header className="header">
@@ -31,9 +11,7 @@ function App() {
                 <h1>Character Library</h1>
             </header>
             <main>
-                <CharacterDataProvider>
-                    <Characters />
-                </CharacterDataProvider>
+                <CharacterContainer/>
             </main>
             <footer>
                 <p>Data source: <a href="https://thronesapi.com">Game of Thrones Character API</a></p>

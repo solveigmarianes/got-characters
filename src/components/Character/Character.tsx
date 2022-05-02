@@ -16,6 +16,10 @@ export interface CharacterProps {
 export default function Character({character}: CharacterProps) {
     const [isOpen, setOpen] = useState(false);
 
+    if (isOpen) {
+        console.log(JSON.stringify(character))
+    }
+
     return (
         <div className="character">
             <button onClick={() => setOpen(!isOpen)}>
@@ -23,13 +27,15 @@ export default function Character({character}: CharacterProps) {
             </button>
             {isOpen &&
                 <div className="character-details">
-                    <img className="character-image" src={character.imageUrl} alt={character.fullName}/>
                     <dl>
                         <dt>Title</dt>
                         <dd>{character.title}</dd>
                         <dt>Family</dt>
                         <dd>{character.family}</dd>
                     </dl>
+                    <div className="character-image">
+                        <img src={character.imageUrl} alt={character.fullName}/>
+                    </div>
                 </div>
             }
         </div>
