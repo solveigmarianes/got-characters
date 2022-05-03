@@ -3,6 +3,8 @@
 ## What is it
 A simple web-app that lists characters from the HBO TV series "Game of Thrones", sourced from the [Game of Thrones Character API](https://thronesapi.com/)
 
+App is available on [https://solveigmarianes.github.io/got-characters/](https://solveigmarianes.github.io/got-characters/) 
+
 ## Possible future improvements
 - Performance: 
   - Caching API response (using service worker?)
