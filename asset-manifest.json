@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/got-characters/static/css/main.1f912beb.css",
+    "main.js": "/got-characters/static/js/main.2e05e64c.js",
+    "static/js/787.099e1dbf.chunk.js": "/got-characters/static/js/787.099e1dbf.chunk.js",
+    "static/media/got-logo.png": "/got-characters/static/media/got-logo.59c7650c5897d32e6d79.png",
+    "index.html": "/got-characters/index.html",
+    "main.1f912beb.css.map": "/got-characters/static/css/main.1f912beb.css.map",
+    "main.2e05e64c.js.map": "/got-characters/static/js/main.2e05e64c.js.map",
+    "787.099e1dbf.chunk.js.map": "/got-characters/static/js/787.099e1dbf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f912beb.css",
+    "static/js/main.2e05e64c.js"
+  ]
+}
