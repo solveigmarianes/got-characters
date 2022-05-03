@@ -29,14 +29,18 @@ main {
   max-width: 1200px;
   width: available;
   width: -webkit-fill-available;
-}
 
-.houses {
-
+  button {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #444;
+    margin: 0;
+  }
 }
 
 footer {
   background-color: #121212;
   padding: 1rem;
   text-align: center;
+  font-size: 0.8rem;
 }

@@ -3,6 +3,8 @@ import './Character.scss'
 
 export type CharacterType = {
     id: number,
+    firstName: string,
+    lastName: string,
     fullName: string,
     title?: string,
     family?: string,
@@ -16,10 +18,6 @@ export interface CharacterProps {
 export default function Character({character}: CharacterProps) {
     const [isOpen, setOpen] = useState(false);
 
-    if (isOpen) {
-        console.log(JSON.stringify(character))
-    }
-
     return (
         <div className="character">
             <button onClick={() => setOpen(!isOpen)}>
@@ -29,6 +27,10 @@ export default function Character({character}: CharacterProps) {
             {isOpen &&
                 <div className="character-details">
                     <dl>
+                        <dt>First name</dt>
+                        <dd>{character.firstName}</dd>
+                        <dt>Last name</dt>
+                        <dd>{character.lastName}</dd>
                         <dt>Title</dt>
                         <dd>{character.title}</dd>
                         <dt>Family</dt>

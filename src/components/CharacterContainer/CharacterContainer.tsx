@@ -10,12 +10,12 @@ export default function CharacterContainer() {
     const [families, setFamilies] = useState<string[]>([])
 
     function getUniqueFamilies(): string[] {
-        const families = characters.data?.map((character: CharacterType) => character.family);
+        const families = characters.data?.map((character: CharacterType) => character.lastName);
         return families?.filter((value: string, index: number, self: string[]) => self.indexOf(value) === index);
     }
 
     function filterByFamily(familyName: string) {
-        const filtered = characters.data?.filter((character: CharacterType) => familyName === character.family)
+        const filtered = characters.data?.filter((character: CharacterType) => familyName === character.lastName)
         setFilteredCharacters(filtered)
     }
 
@@ -32,7 +32,7 @@ export default function CharacterContainer() {
         console.log('updating families')
         setFamilies(getUniqueFamilies())
         setFilteredCharacters(characters.data)
-    },[characters.isLoading] )
+    },[characters.data] )
 
     return characters.isLoading ? (
         <p>Loading characters...</p>

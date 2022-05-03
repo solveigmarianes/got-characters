@@ -8,9 +8,6 @@
     gap: 1rem;
 
     button {
-      background-color: #333;
-      color: #ddd;
-      border: 1px solid #444;
       padding: 0.3rem 0.8rem;
     }
   }
@@ -18,19 +15,22 @@
   .filters {
     position: absolute;
     right: 0;
+    margin-block-start: 1px;
     list-style-type: none;
     padding-inline-start: 0;
     display: flex;
     flex-flow: column wrap;
+    border: 1px solid #444;
 
     .filter-item {
-      width: 100%;
-
+      &:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
       button {
         width: 100%;
         text-align: left;
         border: none;
-        border-bottom: 1px solid #aaa;
+        background-color: #222;
         padding: 0.3rem 0.5rem;
       }
     }

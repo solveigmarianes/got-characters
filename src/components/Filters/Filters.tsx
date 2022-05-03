@@ -36,7 +36,8 @@ export default function Filters({families, filterByFamily, resetFilter}: Filters
                     <i className="bi bi-arrow-counterclockwise"/> Reset filter
                 </button>
                 <button onClick={() => setOpen(!isOpen)}>
-                    <i className="bi bi-funnel-fill"/> {activeFilter ? `Filter: ${activeFilter}` : 'Filter characters'}
+                    <i className="bi bi-funnel-fill"/> {activeFilter ? `Filter: ${activeFilter} ` : 'Filter characters '}
+                    <i className="bi bi-chevron-down"/>
                 </button>
             </div>
             {isOpen &&
