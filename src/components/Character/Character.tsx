@@ -21,7 +21,7 @@ export default function Character({character}: CharacterProps) {
     return (
         <div className="character">
             <button onClick={() => setOpen(!isOpen)}>
-                <h3>{character.fullName}</h3>
+                <h2>{character.fullName}</h2>
                 {isOpen ? <i className="bi bi-chevron-down"/> : <i className="bi bi-chevron-right"/>}
             </button>
             {isOpen &&

@@ -2,6 +2,7 @@ import useGetRequest from "../../useGetRequest";
 import {useEffect, useState} from "react";
 import Filters from "../Filters/Filters";
 import Character, {CharacterType} from "../Character/Character";
+import CharacterSkeleton from "../CharacterSkeleton/CharacterSkeleton";
 
 export default function CharacterContainer() {
     const characters = useGetRequest(`https://thronesapi.com/api/v2/Characters`);
@@ -32,17 +33,22 @@ export default function CharacterContainer() {
         console.log('updating families')
         setFamilies(getUniqueFamilies())
         setFilteredCharacters(characters.data)
-    },[characters.data] )
+    }, [characters.isLoading])
 
-    return characters.isLoading ? (
-        <p>Loading characters...</p>
-    ) : (
+    return (
         <>
+            {characters.error && (
+                <p>Seven hells, the maesters could not find any records</p>
+            )}
             <Filters families={families} filterByFamily={filterByFamily} resetFilter={resetFilter}/>
-            <div className="characters">
-                {filteredCharacters?.map((character: CharacterType) =>
-                    <Character character={character} key={character.id}/>)}
-            </div>
+            {characters.isLoading ? (
+                <CharacterSkeleton/>
+            ):(
+                <div className="characters">
+                    {filteredCharacters?.map((character: CharacterType) =>
+                        <Character character={character} key={character.id}/>)}
+                </div>
+            )}
         </>
     )
 }
