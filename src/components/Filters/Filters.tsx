@@ -24,7 +24,7 @@ export default function Filters({families, filterByFamily, resetFilter}: Filters
 
     const FamilyFilterButton = ({family}: { family: string }) => {
         return (
-            <li className={`filter-item${activeFilter === family ? " active": ""}`}>
+            <li className="filter-item">
                 <button onClick={() => applyFilter(family)}>{family}</button>
             </li>
         )
@@ -36,7 +36,7 @@ export default function Filters({families, filterByFamily, resetFilter}: Filters
                     <i className="bi bi-arrow-counterclockwise"/> Reset filter
                 </button>
                 <button onClick={() => setOpen(!isOpen)}>
-                    <i className="bi bi-funnel-fill"/> {activeFilter ? activeFilter : 'Filter characters'}
+                    <i className="bi bi-funnel-fill"/> {activeFilter ? `Filter: ${activeFilter}` : 'Filter characters'}
                 </button>
             </div>
             {isOpen &&
